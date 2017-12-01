@@ -28,7 +28,7 @@ ITEM Resource
 |  PUT        | /item/<string:item name>    data:{}  | Create or Update an Item                              |
 | DELETE      | /item/<string:item name>             | Delete  item                                          |
 
-ITEMS resource
+ITEMS Resource
 
 | HTTP METHOD |                                      |                                                       |
 |-------------|--------------------------------------|-------------------------------------------------------|
@@ -54,7 +54,7 @@ Get /store
   ]
 }
 ```
-# Example (Invoction / Consuming REST API)
+# Example (Invocation / Consuming REST API)
 
 Using Javascript
 
