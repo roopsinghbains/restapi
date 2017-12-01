@@ -2,7 +2,7 @@
 
 # Overview
 
-This solution demonstrates the simplicity involved in creating a basic implementation of REST API. 
+This solution demonstrates the process of creating a basic implementation of REST API. 
 
 # Actions Summary
 
