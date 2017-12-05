@@ -10,7 +10,9 @@ It also implements authentication using Flask-JWT library (JSON web token) for e
 pip install Flask-JWT
 pip3.5 install Flask-JWT
 
-Import
+
+```
+Imports
 ```
 from flask import Flask, request
 from flask_restful import Resource, Api
