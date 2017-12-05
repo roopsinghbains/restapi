@@ -1,18 +1,18 @@
-## Rest API using Flask 
+# Rest API using Flask 
 
-# Overview
+## Overview
 
 This solution demonstrates the process of creating a REST API for Items resource using flask_restful which abstracts some of the complexity for us.
 It also implements authentication using Flask-JWT library (JSON web token) for encrytion of data. 
 
-# Pre-requisites (Installation and Imports)
+## Pre-requisites (Installation and Imports)
 ``` 
 pip install Flask-JWT
 pip3.5 install Flask-JWT
 
 
 ```
-Imports
+### Imports
 ```
 from flask import Flask, request
 from flask_restful import Resource, Api
@@ -20,7 +20,7 @@ from flask_jwt import JWT, jwt_required
 from security import authentication, identity
 ``` 
 
-#Code Structure
+### Code Structure
 
 Main Logic - app.py
 Authentication - security.py
@@ -33,8 +33,8 @@ ITEM Resource
 | HTTP METHOD |                                      |              Description                                                                                                         |
 |-------------|--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 |             | URL                                  |                                                       																			|
-|  GET        | /item/<string:name>                  | Get Item with given name and associated info with HTTP status 200 or returns none with HTTP Status code 404 (Resource Not Found) |      
-|  POST       | /item/<string:item name>    data:{}  | Create an Item with HTTP status code 201 or returns error message with HTTPS status code 400 (Bad Request) if data already exists|                                  
+|  GET        | /item/<string:item name>                  | Get Item with given name and associated info with HTTP status 200 or returns none with HTTP status code 404 (Resource Not Found) |      
+|  POST       | /item/<string:item name>    data:{}  | Create an Item with HTTP status code 201 or returns error message with HTTP status code 400 (Bad Request) if data already exists|                                  
 |  PUT        | /item/<string:item name>    data:{}  | Create or Update an Item with HTTP status code 200 or 201                                                                        |
 | DELETE      | /item/<string:item name>             | Delete item with HTTP status code 200.                                                                                           |
 
@@ -45,11 +45,13 @@ ITEMS Resource
 | GET         | /items                               | Gets list of all items                                |
 
 
-# Sample Request && Response 
+## Sample Request && Response 
 
-CREATE
+1. CREATE
 
-POST /item/<string:name/> (for example /item/My Item)
+#### POST /item/<string:name/> 
+
+(for example /item/My Item)
 
 Request body/payload
 {
@@ -64,9 +66,11 @@ Response
 }
 ```
 
-RETRIEVE
+2. RETRIEVE
 
-Get /item/<string:name/> (for example /item/My Item)
+#### Get /item/<string:name/> 
+
+(for example /item/My Item)
 
 Item exists returns item with status code 200
 ```
@@ -83,7 +87,7 @@ Item does not exists returns null with status code 404
 }
 ```
 
-Get /items
+#### Get /items
 
 ```
 {  
@@ -96,34 +100,39 @@ Get /items
 }
 ```
 
-UPDATE
+3. UPDATE
 
-PUT /item/<string:name/> (for example /item/My Item)
+#### PUT /item/<string:name/> 
+
+(for example /item/My Item)
 
 Request body /payload
-
+```
 {
-	"price":27.99
+	"price":27.99	
 }
-
+```
 Response
-
+```
 {
 	"name":"My Item"
 	"price":27.99
 }
+```
+4. DELETE
 
-DELETE
+#### DELETE /item/<string:name/> 
 
-DELETE /item/<string:name/> (for example /item/My Item)
+(for example /item/My Item)
 
 Response
-
+```
 {
 	message: "Item deleted"
+	
 }
-
-# Authentication
+```
+## Authentication
 
 The code uses JWT authentication with user info (userId, username, userpassword) in security.py file.
 
@@ -141,7 +150,7 @@ jwt = JWT(app,authentication, identity) # creates endpoint /auth
 
 ```
 
-# Side Notes
+## Side Notes
 
 With flask_restful we no longer need to convert the response to JSON format (using Jsonify) but 
 is created for us by inheriting from Resource as shown below.
