@@ -18,22 +18,6 @@ STORE Resource
 | POST        | /store/<string:name>/item data:{} | create an item inside a specific store with the given name|
 | GET         | /store/<string:name>/item | Get all items in a specific store                                 |
 
-ITEM Resource
-
-| HTTP METHOD |                                      |                                                       |
-|-------------|--------------------------------------|-------------------------------------------------------|
-|             | URL                                  |                                                       |
-|  GET        | /item/<string:name>                  | Get Item with given name and associated info          |
-|  POST       | /item/<string:item name>    data:{}  | Create an Item                                        |
-|  PUT        | /item/<string:item name>    data:{}  | Create or Update an Item                              |
-| DELETE      | /item/<string:item name>             | Delete  item                                          |
-
-ITEMS Resource
-
-| HTTP METHOD |                                      |                                                       |
-|-------------|--------------------------------------|-------------------------------------------------------|
-| GET         | /items                               | Gets list of all items                                |
-
 
 # Sample Response 
 
